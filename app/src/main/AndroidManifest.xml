@@ -24,6 +24,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.example.kitchenactivity.Activity.RecipesAll"
+            android:exported="true" >
+        <intent-filter>
+        <action android:name="android.intent.action.RECIPES" />
+        </intent-filter>
+
+        </activity>
+
+
+
+        <activity android:name=".Login"
+
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.LOGIN">
+                </action>
+            </intent-filter>
+
+        </activity>
+
+
+<!--        <activity android:name="com.example.kitchenactivity.Activity.RecipeDetailsActivity"-->
+<!--            android:exported="true">-->
+
+<!--        </activity>-->
+
+
+<!--        <activity android:name="com.example.kitchenactivity.Activity.RecipeDetails_Steps"-->
+<!--            android:exported="true">-->
+
+<!--        </activity>-->
+
+        <activity android:name="com.example.kitchenactivity.Activity.Recipe_Main"
+            android:exported="true">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

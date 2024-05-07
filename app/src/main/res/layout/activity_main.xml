@@ -5,13 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bottombar"
     tools:context="com.example.kitchenactivity.Activity.MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
         android:background="@color/white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,7 +29,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#80B4DBE6">
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/textView"
@@ -36,8 +38,8 @@
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="293dp"
-                    android:layout_marginBottom="1dp"
-                    android:text="Hi, Lola"
+                    android:fontFamily="@font/alice"
+                    android:text="@string/hi_lola"
                     android:textColor="#104911"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -52,9 +54,11 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Make your own food,"
+                    android:fontFamily="@font/alice"
+                    android:lineSpacingExtra="12sp"
+                    android:text="@string/what_are_you_cooking_today"
                     android:textColor="#f9A620"
-                    android:textSize="20sp"
+                    android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="38dp"
                     android:layout_marginBottom="40dp"
-                    android:text="stay at"
+                    android:text="@string/stay_at"
                     android:textColor="#f9A620"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -84,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="40dp"
-                    android:text="HOME"
+                    android:text="@string/home"
                     android:textColor="#104911"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -98,53 +102,280 @@
                 <EditText
                     android:id="@+id/editTextText"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:autoSizeMaxTextSize="5dp"
+                    android:layout_height="30sp"
+                    android:layout_marginStart="8sp"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginEnd="8sp"
+                    android:autoSizeMaxTextSize="5sp"
                     android:background="@drawable/search_background"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Find your recipe"
-                    android:textSize="10sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/find_your_recipe"
+                    android:textSize="11sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView3"
-                    app:layout_constraintVertical_bias="1.0"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <ImageView
                     android:id="@+id/imageView16"
-                    android:layout_width="110dp"
-                    android:layout_height="103dp"
+                    android:layout_width="71dp"
+                    android:layout_height="62dp"
                     android:layout_marginStart="15dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:contentDescription="@string/id_picture"
+                    android:src="@drawable/img_20240425_wa0000"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextText"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.877"
-                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintHorizontal_bias="0.853"
+                    app:layout_constraintStart_toEndOf="@id/textView2"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.28"
-                    tools:srcCompat="@drawable/img_20240425_wa0000"
-                    android:contentDescription="TODO" />
+                    app:layout_constraintVertical_bias="0.226"
+                    tools:srcCompat="@drawable/img_20240425_wa0000" />
 
                 <ImageView
                     android:id="@+id/imageView17"
                     android:layout_width="23dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="4dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/editTextText"
+                    android:contentDescription="@string/search_button"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextText"
+                    app:layout_constraintStart_toStartOf="@id/editTextText"
                     app:layout_constraintTop_toTopOf="@+id/editTextText"
                     app:layout_constraintVertical_bias="0.093"
                     app:srcCompat="@android:drawable/ic_menu_search" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout7"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextText"
+                    tools:layout_editor_absoluteX="-8dp">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/alice"
+                    android:text="CEVA"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout7"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout7" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/alice"
+                    android:text="@string/categories"
+
+                    app:layout_constraintBottom_toTopOf="@id/Categorii"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerView4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/Categorii"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerView4" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/bottombar">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:gravity="bottom"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+
+
+            app:fabCradleVerticalOffset="6dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageview_home1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Home Icon"
+                    android:src="@android:drawable/ic_menu_gallery"
+                     android:foregroundGravity="bottom|fill_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/textview1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@android:drawable/ic_menu_gallery"
+                    android:background="@color/orange"/>
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/HOME_BUT"
+                    android:textAlignment="center"
+                    android:textColor="#676767"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/home1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp">
+
+
+                <ImageView
+                    android:id="@+id/imageview_recipes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Recipes Icon"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:foregroundGravity="bottom|fill_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/textview2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@android:drawable/ic_menu_gallery"
+                    android:background="@color/orange"/>
+
+                <TextView
+                    android:id="@+id/textview2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recipes"
+                    android:textAlignment="center"
+                    android:textColor="#676767"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/home2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp">
+
+
+                <ImageView
+                    android:id="@+id/imageview_home3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Another Icon"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:foregroundGravity="bottom|fill_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/textview3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@android:drawable/ic_menu_gallery"
+                    android:background="@color/orange"/>
+
+                <TextView
+                    android:id="@+id/textview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Favorites"
+                    android:textAlignment="center"
+                    android:textColor="#676767"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/home4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/home3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp">
+
+
+                <ImageView
+                    android:id="@+id/imageview_home4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="Another Icon"
+                    android:src="@android:drawable/ic_menu_gallery"
+                    android:foregroundGravity="bottom|fill_horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/textview4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:srcCompat="@android:drawable/ic_menu_gallery"
+                    android:background="@color/orange"/>
+
+                <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:textAlignment="center"
+                    android:textColor="#676767"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBaseline_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="1.0"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
